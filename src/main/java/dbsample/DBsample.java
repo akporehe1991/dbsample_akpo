@@ -21,11 +21,11 @@ public class DBsample {
        } catch (ClassNotFoundException ex){
           Logger.getLogger(DBsample.class.getName()).log(Level.SEVERE, null, ex);
        }
-       String host = System.getenv("OPENSHIF_MYSQL_DB_HOST");
-       String port = System.getenv("OPENSHIF_MYSQL_DB_PORT");
-       String username = System.getenv("OPENSHIF_MYSQL_DB_USERNAME");
-       String password = System.getenv("OPENSHIF_MYSQL_DB_PASSWORD");
-       String name = System.getenv("OPENSHIF_MYSQL_DB_NAME");
+       String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
+       String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
+       String username = System.getenv("OPENSHIFT_MYSQL_DB_USERNAME");
+       String password = System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
+       String name = System.getenv("OPENSHIFT_MYSQL_DB_NAME");
       String url = "jdbc:mysql://" + host + ":" + port + "/" +name;
       return DriverManager.getConnection(url, username, password);
                
