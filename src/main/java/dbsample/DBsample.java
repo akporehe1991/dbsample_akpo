@@ -25,7 +25,7 @@ public class DBsample {
        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
        String username = System.getenv("OPENSHIFT_MYSQL_DB_USERNAME");
        String password = System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
-       String name = "dbsample";
+       String name = "dbsample";//ansure its is the right name for your database
       String url = "jdbc:mysql://" + host + ":" + port + "/" +name;
       return DriverManager.getConnection(url, username, password);
                
@@ -36,7 +36,7 @@ public class DBsample {
       
            try (Connection conn = getConnection()) {
                Statement stmt = conn.createStatement();
-               ResultSet rs = stmt.executeQuery("SELECT * FROM PEOPLE");
+               ResultSet rs = stmt.executeQuery("SELECT * FROM people");
                
                while (rs.next()){
                    output += "<h2>"+rs.getString("name")+"</h2>";
